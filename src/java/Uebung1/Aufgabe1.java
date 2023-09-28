@@ -1,10 +1,6 @@
 package Uebung1;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.TreeSet;
-
-public class ICantName {
+public class Aufgabe1 {
     static void possibleSolution_BruteForce(int n) {
         int targetNumber = n * n;
         int count = 0;
@@ -39,12 +35,29 @@ public class ICantName {
         int count = 16;
         int targetNumber = n * n;
         for (int i = 2; i <= 8; i++) {
+            int[] nums = new int[i];
+            int currentIndex = 0;
 
         }
         return count;
     }
 
+    static boolean incrementNums(int[] nums, int currentIndex) {
+        while (nums[currentIndex] == 9) {
+            currentIndex--;
+            if (currentIndex == -1)
+                return true;
+        }
+        int newBase = ++nums[currentIndex];
+        currentIndex++;
+        while (currentIndex < nums.length) {
+            nums[currentIndex] = newBase;
+            currentIndex++;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
-        possibleSolution_BruteForce(8);
+        possibleSolution_BruteForce(1);
     }
 }
