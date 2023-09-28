@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Algo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Uebung1/ICantName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Uebung1/ICantName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Uebung1/Aufgabe1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Uebung1/Aufgabe1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "BLVD3"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="556e560b-8d5c-4782-a8dd-80a216a52903" />
+        <option name="url" value="https://github.com/BLVD3/AlgoData.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
