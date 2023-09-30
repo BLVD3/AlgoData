@@ -16,11 +16,11 @@ public class Aufgabe1 {
                                     for (int q = -n; q <= n; q++) {
                                         if (i*i+j*j+k*k+l*l+m*m+o*o+p*p+q*q == targetNumber) {
                                             count++;
-                                            /*System.out.println(count + ": "
+                                            System.out.println(count + ": "
                                                     + i + " " + j + " "
                                                     + k + " " + l + " "
                                                     + m + " " + o + " "
-                                                    + p + " " + q);*/
+                                                    + p + " " + q);
                                         }
                                     }
                                 }
@@ -33,12 +33,12 @@ public class Aufgabe1 {
         System.out.println(count);
     }
 
-    static int countPossibleSolutions(int n) {
-        int count = 16;
+    static long countPossibleSolutions(int n) {
+        long count = 16;
         int targetNumber = n * n;
 
         for (int i = 2; i <= 8; i++) {
-            int nullPositionVariation = countPermutationsOfElementCount(8-i, i);
+            long nullPositionVariation = countPermutationsOfElementCount(8-i, i);
             int[] nums = new int[i];
             boolean hit = false;
             while (!incrementNums(nums, n, hit)) {
@@ -46,7 +46,7 @@ public class Aufgabe1 {
                 if (sum >= targetNumber){
                     hit = true;
                     if (sum == targetNumber) {
-                        count += countPermutationsOfArray(nums) * nullPositionVariation * (1 << i);
+                        count += countPermutationsOfArray(nums) * nullPositionVariation * (1L << i);
                     }
                 }
                 else
@@ -129,9 +129,9 @@ public class Aufgabe1 {
     static int countPermutationsOfElementCount(int... counts) {
         int correctionValue = 1;
         int elements = 0;
-        for (int i = 0; i < counts.length; i++) {
-            correctionValue *= factorial(counts[i]);
-            elements += counts[i];
+        for (int count : counts) {
+            correctionValue *= factorial(count);
+            elements += count;
         }
         int perIfUnique = factorial(elements);
         return perIfUnique / correctionValue;
@@ -146,13 +146,15 @@ public class Aufgabe1 {
     }
 
     public static void main(String[] args) {
-        possibleSolution_BruteForce(8);
-        long start = System.currentTimeMillis();
-        possibleSolution_BruteForce(8);
-        System.out.println("Bruteforce took " + (System.currentTimeMillis() - start) + " ms");
-        start = System.currentTimeMillis();
-        System.out.println(countPossibleSolutions(8));
-        System.out.println("Permutation counting took " + (System.currentTimeMillis() - start) + " ms");
+        for (int i = 1; i <= 10; i++) {
+            countPossibleSolutions(i);
+        }
 
+        for (int i = 1; i <= 100; i++) {
+            long start = System.nanoTime();
+            System.out.println(i + "; " + countPossibleSolutions(i) + "; ");
+            long nsSpent = System.nanoTime() - start;
+            System.out.println(nsSpent);
+        }
     }
 }
