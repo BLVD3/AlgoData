@@ -1,5 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    int value;
+    int id;
+    int pos;
+} sjtTuple;
 
 int squareSum(int *array, int length) {
     int sum = 0;
@@ -113,6 +120,72 @@ long countVariants(int n) {
     return count;
 }
 
-int main() {
+void swapElements(sjtTuple *elements, int *original, int pos1, int pos2) {
+    sjtTuple tempE = elements[pos1];
+    int tempO = original[pos1];
+
+}
+
+char checkOrder(sjtTuple *elements, int length, int *counters) {
+    for (int i = 0; i < length; i++) {
+        counters[elements[i].id]++;
+        if (counters[elements[i].id] != elements[i].pos) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void forEachPermutation(int *array, int length, void (*f)(int*, int)) {
+    int *duplicateMap;
+    int uniqueElements = countSortedDuplicates(array, length, &duplicateMap);
+    sjtTuple *elements = malloc(length * sizeof(sjtTuple));
+    int pos;
+    for (int i = 0; i < uniqueElements; i++) {
+        for (int j = 0; j < duplicateMap[i]; j++) {
+            elements[pos].value = array[pos];
+            elements[pos].id = i;
+            elements[pos].pos = j;
+            pos++;
+        }
+    }
+    int stepsRemaining = permutationCount(duplicateMap, uniqueElements) - 1;
+    free(duplicateMap);
     
+    int *orderCounter = malloc(uniqueElements * sizeof(int));
+    int direction = -1;
+    char farEnd = 0;
+    int *copy = malloc(length * sizeof(int));
+    memcpy(copy, array, length * sizeof(int));
+    pos = length - 2;
+    while (stepsRemaining > 0) {
+        if (!farEnd){
+            swapElements(elements, copy, pos, pos + 1);
+            if (pos == 0 || pos == length - 2) {
+                farEnd = 1;
+                direction *= -1;
+            }
+            else
+                pos += direction;
+        }
+        else {
+            if (direction == 1) {
+                swapElements(elements, copy, length - 2, length - 1);
+            } else {
+                swapElements(elements, copy, 0, 1);
+            }
+            farEnd = 0;
+        }
+        if (checkOrder(elements, length, orderCounter)) {
+            
+        }
+        stepsRemaining--;
+    }
+    free(elements);
+}
+
+int main() {
+    for(int i = 1; i <= 100; i++) {
+        printf("%d: %lli\n", i, countVariants(i));
+    }
 }
