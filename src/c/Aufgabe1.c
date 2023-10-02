@@ -30,8 +30,7 @@ int countSortedDuplicates(int *data, int dataSize, int **counts) {
         tempCounts[uniqueElements - 1]++;
     }
     *counts = malloc(sizeof(int) * uniqueElements);
-    for (int i = 0; i < uniqueElements; i++)
-    {
+    for (int i = 0; i < uniqueElements; i++) {
         (*counts)[i] = tempCounts[i];
     }
     return uniqueElements;
@@ -40,14 +39,80 @@ int countSortedDuplicates(int *data, int dataSize, int **counts) {
 int permutationCount(int *duplicateCounts, int uniqueCount) {
     int correctionValue = 1;
     int elementCount = 0;
-    for (int i = 0; i < uniqueCount; i++)
-    {
+    for (int i = 0; i < uniqueCount; i++) {
         correctionValue *= factorial(duplicateCounts[i]);
         elementCount += duplicateCounts[i];
     }
     return factorial(elementCount) / correctionValue;
 }
 
-int main() {
+void initNums(int* nums, int length) {
+    for (int i = 0; i < length; i++) {
+        nums[i] = 1;
+    }
+    for (int i = length; i < 8; i++) {
+        nums[i] = 0;
+    }
+}
 
+char nextRelevant(int *current, int length, int base, char hit) {
+    int i = 0;
+    if (hit) {
+        int hitNum = current[i];
+        while (i < length && current[i] == hitNum) {
+            i++;
+        }
+        if (i == length) {
+            return 0;
+        }
+    }
+    else  {
+        while (i < length && (current[i] + 1) == base)
+            i++;
+        if (i == length)
+            return 0;
+    }
+    int newNum = ++current[i];
+    i--;
+    while (i >= 0) {
+        current[i] = newNum;
+        i--;
+    }
+    return 1;
+}
+
+int calculateNullVariantsCount(int numbers) {
+    int counts[] = { numbers, 8 - numbers };
+    return permutationCount(counts, 2);
+}
+
+long countVariants(int n) {
+    long count = 16;
+    int nums[8];
+    char hit;
+    int target = n * n;
+    for (int i = 2; i <= 8; i++)
+    {
+        long nc = calculateNullVariantsCount(i);
+        initNums(nums, i);
+        do {
+            if (squareSum(nums, i) >= target) {
+                hit = 1;
+                if (squareSum(nums, i) == target) {
+                    int *duplicateMap;
+                    int uniqueCount = countSortedDuplicates(nums, i, &duplicateMap);
+                    count += ((long)permutationCount(duplicateMap, uniqueCount)) * nc * (1L << i);
+                    free(duplicateMap);
+                }
+            }
+            else {
+                hit = 0;
+            }
+        } while(nextRelevant(nums, i, n, hit));
+    }
+    return count;
+}
+
+int main() {
+    
 }

@@ -146,15 +146,6 @@ public class Aufgabe1 {
     }
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            countPossibleSolutions(i);
-        }
-
-        for (int i = 1; i <= 100; i++) {
-            long start = System.nanoTime();
-            System.out.println(i + "; " + countPossibleSolutions(i) + "; ");
-            long nsSpent = System.nanoTime() - start;
-            System.out.println(nsSpent);
-        }
+        System.out.println(countPossibleSolutions(4));
     }
 }
