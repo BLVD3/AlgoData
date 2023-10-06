@@ -123,15 +123,24 @@ long countVariants(int n) {
 void swapElements(sjtTuple *elements, int *original, int pos1, int pos2) {
     sjtTuple tempE = elements[pos1];
     int tempO = original[pos1];
+    elements[pos1] = elements[pos2];
+    elements[pos2] = tempE;
+    original[pos1] = original[pos2];
+    original[pos2] = tempO;
+
 
 }
 
-char checkOrder(sjtTuple *elements, int length, int *counters) {
+char checkOrder(sjtTuple *elements, int length, int uniqueElements, int *counters) {
+    for (int i = 0; i < uniqueElements; i++) {
+        counters[i] = 0;
+    }
+    
     for (int i = 0; i < length; i++) {
-        counters[elements[i].id]++;
         if (counters[elements[i].id] != elements[i].pos) {
             return 0;
         }
+        counters[elements[i].id]++;
     }
     return 1;
 }
@@ -140,7 +149,7 @@ void forEachPermutation(int *array, int length, void (*f)(int*, int)) {
     int *duplicateMap;
     int uniqueElements = countSortedDuplicates(array, length, &duplicateMap);
     sjtTuple *elements = malloc(length * sizeof(sjtTuple));
-    int pos;
+    int pos = 0;
     for (int i = 0; i < uniqueElements; i++) {
         for (int j = 0; j < duplicateMap[i]; j++) {
             elements[pos].value = array[pos];
@@ -149,43 +158,28 @@ void forEachPermutation(int *array, int length, void (*f)(int*, int)) {
             pos++;
         }
     }
-    int stepsRemaining = permutationCount(duplicateMap, uniqueElements) - 1;
+    //int stepsRemaining = factorial(length);
     free(duplicateMap);
     
     int *orderCounter = malloc(uniqueElements * sizeof(int));
-    int direction = -1;
-    char farEnd = 0;
     int *copy = malloc(length * sizeof(int));
     memcpy(copy, array, length * sizeof(int));
-    pos = length - 2;
-    while (stepsRemaining > 0) {
-        if (!farEnd){
-            swapElements(elements, copy, pos, pos + 1);
-            if (pos == 0 || pos == length - 2) {
-                farEnd = 1;
-                direction *= -1;
-            }
-            else
-                pos += direction;
-        }
-        else {
-            if (direction == 1) {
-                swapElements(elements, copy, length - 2, length - 1);
-            } else {
-                swapElements(elements, copy, 0, 1);
-            }
-            farEnd = 0;
-        }
-        if (checkOrder(elements, length, orderCounter)) {
-            
-        }
-        stepsRemaining--;
-    }
+
+    
+
     free(elements);
+    free(copy);
+}
+
+void printAllVersions(int* arr, int length) {
+    for (int i = 0; i < length; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 }
 
 int main() {
-    for(int i = 1; i <= 100; i++) {
-        printf("%d: %lli\n", i, countVariants(i));
-    }
+    //int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+    //forEachPermutation(arr, 5, printAllVersions);
+    printf("%ld\n", countVariants(50));
 }
