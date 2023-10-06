@@ -15,13 +15,19 @@ public class CounterTest {
     }
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 100; i++){
-            int[] nums = {0, 0, 0, 0, 0, 0, 0, 0};
-            int count = 0;
-            do {
-                count++;
-            } while (increment(nums, i));
-            System.out.println(i + ": " + count);
+        for (int i = 1; i <= 8; i++){
+            int[] nums = new int[i];
+            for (int j = 1; j <= 8; j++) {
+                for (int k = 0; k < i; k++) {
+                    nums[k] = 0;
+                }
+                int count = 0;
+                do {
+                    count++;
+                } while (increment(nums, j));
+                System.out.print(count + "   \t");
+            }
+            System.out.println();
         }
     }
 }
