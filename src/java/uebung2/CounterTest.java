@@ -1,9 +1,9 @@
-package Uebung1;
+package uebung2;
 
 public class CounterTest {
     static boolean increment(int[] nums, int max) {
         int pos = 0;
-        while (pos < nums.length && nums[pos] == (max - 1))
+        while (pos < nums.length && nums[pos] == (max))
             pos++;
         if (pos == nums.length)
             return false;

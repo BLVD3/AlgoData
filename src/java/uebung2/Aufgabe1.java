@@ -1,4 +1,4 @@
-package Uebung1;
+package uebung2;
 
 import java.util.Arrays;
 
