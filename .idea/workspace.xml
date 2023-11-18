@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="tabular view">
-      <change afterPath="$PROJECT_DIR$/src/java/Uebung1/Test.java" afterDir="false" />
+    <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="Added uebung6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Uebung1/CounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/Uebung1/CounterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/uebung5/Perm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/uebung5/Perm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +93,8 @@
       <workItem from="1697116154605" duration="6000" />
       <workItem from="1699332774202" duration="1207000" />
       <workItem from="1699523113844" duration="6000" />
+      <workItem from="1700214953276" duration="6282000" />
+      <workItem from="1700225171740" duration="150000" />
     </task>
     <task id="LOCAL-00001" summary="uiDesigner?">
       <created>1696031747841</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696631976802</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added uebung6">
+      <created>1700218094859</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700218094859</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,20 +145,16 @@
     <MESSAGE value="uiDesigner?" />
     <MESSAGE value="Added Counter for Runtime analysis" />
     <MESSAGE value="tabular view" />
-    <option name="LAST_COMMIT_MESSAGE" value="tabular view" />
+    <MESSAGE value="Added uebung6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added uebung6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/java/Uebung1/CounterTest.java</url>
+          <url>file://$PROJECT_DIR$/src/java/uebung2/CounterTest.java</url>
           <line>25</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/java/Uebung1/Test.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,6 +5,8 @@ class Perm extends Thread{
   private int max; // maximaler Index
   private boolean mayread = false; // Kontrolle
 
+  public int counter = 0;
+
   Perm (int n) { // Konstruktor
     a = new int[n]; // Indices: 0 .. n-1
     max = n-1; // Maximaler Index
@@ -13,12 +15,13 @@ class Perm extends Thread{
   } // end Konstruktor
 
   public void run (){// die Arbeits-Methode
-    perm (1); // a[0] bleibt fest; permutiere ab 1
+    perm (0); // a[0] bleibt fest; permutiere ab 1
     a = null; // Anzeige, dass fertig
     put (); // ausliefern
   } // end run
 
   private void perm (int i){ // permutiere ab Index i
+    counter++;
     if (i >= max) put (); // eine Permutation fertig
     else {
       for (int j=i; j <= max; j++) { // jedes nach Vorne
@@ -36,7 +39,7 @@ class Perm extends Thread{
     { int h = a[i]; a[i] = a[j]; a[j] = h; }
   } // end swap
 
-  synchronized int[] getNext (){ // liefert naechste Permutation
+  synchronized int[] getNext(){ // liefert naechste Permutation
     mayread = false; // a darf geaendert werden
     notify (); // wecke anderen Thread
     try {
@@ -54,4 +57,12 @@ class Perm extends Thread{
       while (mayread) wait (); // non busy waiting
     } catch (InterruptedException e){}
   } // end put
+
+  public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+      Perm perm = new Perm(i);
+      while (perm.getNext() != null);
+      System.out.println(i + ": " + perm.counter);
+    }
+  }
 } // Perm
