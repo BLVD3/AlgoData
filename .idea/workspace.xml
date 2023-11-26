@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="Added uebung6">
+    <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="Added U4">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/uebung5/Perm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/uebung5/Perm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/uebung6/DLXSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/uebung6/DLXSolver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +47,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/java" />
@@ -95,6 +97,8 @@
       <workItem from="1699523113844" duration="6000" />
       <workItem from="1700214953276" duration="6282000" />
       <workItem from="1700225171740" duration="150000" />
+      <workItem from="1700334739159" duration="166000" />
+      <workItem from="1701021660879" duration="1970000" />
     </task>
     <task id="LOCAL-00001" summary="uiDesigner?">
       <created>1696031747841</created>
@@ -124,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700218094859</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added U4">
+      <created>1700334825792</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700334825792</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +157,8 @@
     <MESSAGE value="Added Counter for Runtime analysis" />
     <MESSAGE value="tabular view" />
     <MESSAGE value="Added uebung6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added uebung6" />
+    <MESSAGE value="Added U4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added U4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
