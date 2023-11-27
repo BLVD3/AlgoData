@@ -8,49 +8,9 @@ public class DLXSolver {
     private class DLXNode {
         public DLXNode head;
         public DLXNode up, down, left, right;
-        public final int x, y;
 
-
-
-        public DLXNode(int x, int y) {
+        public DLXNode() {
             head = up = down = left = right = this;
-            this.x = x;
-            this.y = y;
-        }
-
-        public void coverHorizontal() {
-            left.right = right;
-            right.left = left;
-        }
-
-        public void uncoverHorizontal() {
-            left.right = this;
-            right.left = this;
-        }
-
-        public void coverVertical() {
-            up.down = down;
-            down.up = up;
-        }
-
-        public void uncoverVertical() {
-            up.down = this;
-            down.up = this;
-        }
-
-        public void coverRow() {
-            DLXNode current = this.right;
-            while (current != this) {
-                current.coverVertical();
-                current = current.right;
-            }
-        }
-        public void uncoverRow() {
-            DLXNode current = this.right;
-            while (current != this) {
-                current.uncoverVertical();
-                current = current.right;
-            }
         }
     }
 
@@ -60,7 +20,7 @@ public class DLXSolver {
 
     public DLXSolver(BitSet[] matrix, int width) {
         //Init variables
-        anchor = new DLXNode(-1, -1);
+        anchor = new DLXNode();
         DLXNode[] heads = new DLXNode[width];
         ArrayList<DLXNode>[] columns = new ArrayList[width];
 
@@ -70,27 +30,26 @@ public class DLXSolver {
         }
 
         //Create Header
-        heads[0] = new DLXNode(0, -1);
+        heads[0] = new DLXNode();
         heads[0].left = anchor;
         anchor.right = heads[0];
         for (int i = 1; i < width; i++) {
-            heads[i] = new DLXNode(i, -1);
+            heads[i] = new DLXNode();
             heads[i - 1].right = heads[i];
             heads[i].left = heads[i - 1];
         }
         (anchor.left = heads[width - 1]).right = anchor;
         // Create Table and link horizontal
-        for (int i = 0; i < matrix.length; i++) {
-            BitSet subSet = matrix[i];
+        for (BitSet subSet : matrix) {
             int index = 0;
             while ((!subSet.get(index)) && (index < subSet.length())) index++;
             if (index == subSet.length()) continue;
-            DLXNode first = new DLXNode(index, i);
+            DLXNode first = new DLXNode();
             columns[index].add(first);
             DLXNode cur = first;
             for (index++; index < subSet.length(); index++) {
                 if (subSet.get(index)) {
-                    DLXNode newNode = new DLXNode(index, i);
+                    DLXNode newNode = new DLXNode();
                     cur.right = newNode;
                     newNode.left = cur;
                     cur = newNode;
@@ -127,33 +86,35 @@ public class DLXSolver {
             return;
         }
         DLXNode current = anchor.right;
-        while ((current = current.down) != current.head) {
-            current.head.coverHorizontal();
-            current.coverRow();
-            DLXNode hCover = current.right;
-            while (hCover != current) {
-                hCover.head.coverHorizontal();
-                DLXNode vCover = hCover.down;
-                while (vCover != hCover) {
-                    vCover.coverRow();
-                    vCover = vCover.down;
-                }
-                hCover = hCover.right;
-            }
+        cover(current);
+        for (DLXNode downSearch = current.down; downSearch != current; downSearch = downSearch.down) {
+            for (DLXNode rightIter = downSearch.right; rightIter != downSearch; rightIter = rightIter.right)
+                cover(rightIter.head);
             searchAndCount();
-            current.head.uncoverVertical();
-            current.uncoverRow();
-            hCover = current.right;
-            while (hCover != current) {
-                hCover.head.uncoverHorizontal();
-                DLXNode vCover = hCover.down;
-                while (vCover != hCover) {
-                    vCover.uncoverRow();
-                    vCover = vCover.down;
-                }
-                hCover = hCover.right;
-            }
+            for (DLXNode leftIter = downSearch.left; downSearch != leftIter; leftIter = leftIter.left)
+                uncover(leftIter.head);
         }
+        uncover(current);
+    }
+
+    private void cover(DLXNode node) {
+        node.right.left = node.left;
+        node.left.right = node.right;
+        for (DLXNode row = node.down; row != node; row = row.down)
+            for (DLXNode collumn = row.right; collumn != row; collumn = collumn.right) {
+                collumn.down.up = collumn.up;
+                collumn.up.down = collumn.down;
+            }
+    }
+
+    private void uncover(DLXNode node) {
+        for (DLXNode row = node.up; row != node; row = row.up)
+            for (DLXNode collumn = row.left; collumn != row; collumn = collumn.left) {
+                collumn.down.up = collumn;
+                collumn.up.down = collumn;
+            }
+        node.right.left = node;
+        node.left.right = node;
     }
 
     public static void main(String[] args) {
