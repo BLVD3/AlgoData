@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
 
+/**
+ * Schreiben Sie ein Programm DLXPentominoTWYX, das auf dem DLX Verfahren beruht und das
+ * Folgendes leistet: Es wird eine nat¨urliche Zahl n ≥ 0 eingelesen. Anschließend wird a(n) berechnet
+ * und ausgegeben. Dabei gibt a(n) an, auf wie viele verschiedene Arten ein rechteckiges 5 × n-Feld
+ * mit T-, W-, Y- und X-Pentominos vollst¨andig gekachelt werden kann. Alle Pentominos haben die
+ * Fl¨ache 5. Alle Figuren k¨onnen nat¨urlich gedreht und gewendet werden.
+ *
+ * @author Nico Vogel, Henri Staudenrausch, Julia Keck
+ */
 public class DLXPentominoTWYX {
     private static Pentomino[] pentominos = new Pentomino[17];
     private static List<BitSet> initialProblem = new ArrayList<>();
@@ -48,7 +57,7 @@ public class DLXPentominoTWYX {
     }
 
     private static class Pentomino {
-        private int[] shape;
+        private final int[] shape;
         private int width;
         private int height;
 
