@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="Added U4">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/uebung6/DLXSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/uebung6/DLXSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/uebung6/DLXPentominoTWYX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/uebung6/DLXPentominoTWYX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -52,7 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Pentominos",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -98,6 +105,7 @@
       <workItem from="1700225171740" duration="150000" />
       <workItem from="1700334739159" duration="166000" />
       <workItem from="1701021660879" duration="8482000" />
+      <workItem from="1701116602293" duration="2891000" />
     </task>
     <task id="LOCAL-00001" summary="uiDesigner?">
       <created>1696031747841</created>
