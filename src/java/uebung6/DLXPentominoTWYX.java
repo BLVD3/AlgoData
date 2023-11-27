@@ -5,7 +5,7 @@ import java.util.BitSet;
 import java.util.List;
 
 public class DLXPentominoTWYX {
-    private static Pentomino[] pentominos = new Pentomino[20];
+    private static Pentomino[] pentominos = new Pentomino[17];
     private static List<BitSet> initialProblem = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -44,6 +44,7 @@ public class DLXPentominoTWYX {
         }
 
         DLXSolver solver = new DLXSolver(initialProblem.toArray(new BitSet[initialProblem.size()]), 5 * n);
+        System.out.println(solver.countSolutions());
     }
 
     private static class Pentomino {
