@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3229fd-4cc6-4dc4-84f8-d6296b4bea7f" name="Changes" comment="Added U4">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/java/uebung6/DLXSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java/uebung6/DLXSolver.java" afterDir="false" />
     </list>
@@ -98,7 +97,7 @@
       <workItem from="1700214953276" duration="6282000" />
       <workItem from="1700225171740" duration="150000" />
       <workItem from="1700334739159" duration="166000" />
-      <workItem from="1701021660879" duration="1970000" />
+      <workItem from="1701021660879" duration="8482000" />
     </task>
     <task id="LOCAL-00001" summary="uiDesigner?">
       <created>1696031747841</created>
@@ -167,6 +166,11 @@
           <url>file://$PROJECT_DIR$/src/java/uebung2/CounterTest.java</url>
           <line>25</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/java/uebung6/DLXSolver.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
